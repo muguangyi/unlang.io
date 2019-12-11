@@ -1,0 +1,18 @@
+title: UNLang
+subtitle: "Unity Node Language."
+description: "Unity Node Language."
+author: MuGuangyi
+language: en
+timezone: UTC
+
+url: https://muguangyi.github.io/unlang.io
+root: /unlang.io/
+
+theme: navy-s
+
+highlight:
+  enable: true
+  line_number: false
+
+disqus_shortname: unlang.io
+github: muguangyi/unlang
