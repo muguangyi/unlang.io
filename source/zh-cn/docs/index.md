@@ -2,8 +2,8 @@
 title: 文档
 ---
 
-欢迎使用 UNLang
+欢迎使用UNLang。
 
-## 什么是 UNLang？
+## 什么是UNLang
 
 UNLang是Unity可视化节点语言。
