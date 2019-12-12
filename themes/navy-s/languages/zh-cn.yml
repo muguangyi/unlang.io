@@ -20,6 +20,11 @@ sidebar:
     install: 安装
     compile: 编译
     first_script: 第一段脚本
+    core_concept: 核心概念
+    lang_instance: UNLang实例
+    node_loader: UNLang装载器
+    lang_action: Action
+    lang_state: State
   api:
     core: 核心
     overview: 概述

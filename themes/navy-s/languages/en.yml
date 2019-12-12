@@ -20,6 +20,11 @@ sidebar:
     install: Install
     compile: Compile
     first_script: First Script
+    core_concept: Core Concept
+    lang_instance: UNLang Instance
+    node_loader: UNLang Loader
+    lang_action: Action
+    lang_state: State
   api:
     core: Core
     overview: Overview

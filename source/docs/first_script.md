@@ -7,7 +7,7 @@ title: First Script
 ## ① Create "Hello UNLang!" Script
 
 * Back to Unity editor, you will see `UNLang/IDE...` menu.
-  ![unlang-1](assets/unlang-1.png)
+  ![unlang-1](unlang.io/assets/unlang-1.png)
 * Open the `IDE` window.
 * Right click in the `IDE` window and you will see all operations in the context menu.
   ![unlang-2](assets/unlang-2.png)
