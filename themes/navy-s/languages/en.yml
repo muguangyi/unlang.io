@@ -1,6 +1,5 @@
 menu:
   docs: Docs
-  api: API
 
 index:
   get_started: Get started
@@ -25,6 +24,3 @@ sidebar:
     node_loader: UNLang Loader
     lang_action: Action
     lang_state: State
-  api:
-    core: Core
-    overview: Overview

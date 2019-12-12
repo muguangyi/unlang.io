@@ -9,7 +9,3 @@ docs:
     node_loader: index.html
     lang_action: index.html
     lang_state: index.html
-
-api:
-  core:
-    overview: index.html

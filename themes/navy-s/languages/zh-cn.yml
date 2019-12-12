@@ -1,6 +1,5 @@
 menu:
   docs: 文档
-  api: API
 
 index:
   get_started: 开始使用
@@ -25,6 +24,3 @@ sidebar:
     node_loader: UNLang装载器
     lang_action: Action
     lang_state: State
-  api:
-    core: 核心
-    overview: 概述
