@@ -22,5 +22,5 @@ sidebar:
     core_concept: 核心概念
     lang_instance: UNLang实例
     node_loader: UNLang装载器
-    lang_action: Action
-    lang_state: State
+    lang_action: 行为
+    lang_state: 状态

@@ -5,7 +5,7 @@ docs:
     compile: compile.html
     first_script: first_script.html
   core_concept:
-    lang_instance: index.html
-    node_loader: index.html
-    lang_action: index.html
-    lang_state: index.html
+    lang_instance: lang_instance.html
+    node_loader: node_loader.html
+    lang_action: lang_action.html
+    lang_state: lang_state.html

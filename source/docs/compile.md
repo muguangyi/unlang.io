@@ -7,4 +7,4 @@ title: Compile
 * Compile.
 * Output is under `build` folder.
 
-> UNLang is based on .NET Standard2.0, and could be compiled to other target framework, like .NET35 .NET4x, etc.
+> UNLang is based on .NET Standard2.0, and could be compiled to other target framework, like .NET35, .NET4x, etc.

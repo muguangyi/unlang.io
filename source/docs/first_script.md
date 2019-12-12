@@ -7,16 +7,16 @@ title: First Script
 ## ① Create "Hello UNLang!" Script
 
 * Back to Unity editor, you will see `UNLang/IDE...` menu.
-  ![unlang-1](/assets/unlang-1.png)
+  ![unlang-1](../assets/unlang-1.png)
 * Open the `IDE` window.
 * Right click in the `IDE` window and you will see all operations in the context menu.
-  ![unlang-2](/assets/unlang-2.png)
+  ![unlang-2](../assets/unlang-2.png)
 * Add `Entry`, `Constant` and `Console` modules, then connect them as following:
-  ![unlang-3](/assets/unlang-3.png)
+  ![unlang-3](../assets/unlang-3.png)
 * Select `Constant` module and in the **Inspector** window, choose `String` type and input `Hello UNLang!`.
-  ![unlang-4](/assets/unlang-4.png)
+  ![unlang-4](../assets/unlang-4.png)
 * Right click to save the script to local project, for example, `[UnityProject]/Assets/Resources/1.bytes`.
-  ![unlang-5](/assets/unlang-5.png)
+  ![unlang-5](../assets/unlang-5.png)
 
 ## ② Run the Script
 
