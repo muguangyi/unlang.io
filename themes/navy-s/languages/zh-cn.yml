@@ -17,6 +17,9 @@ sidebar:
   docs:
     getting_started: 开始使用
     overview: 概述
+    install: 安装
+    compile: 编译
+    first_script: 第一段脚本
   api:
     core: 核心
     overview: 概述
