@@ -5,6 +5,7 @@ docs:
     compile: compile.html
     first_script: first_script.html
   core_concept:
+    workflow: workflow.html
     lang_instance: lang_instance.html
     node_loader: node_loader.html
     lang_action: lang_action.html

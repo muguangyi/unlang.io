@@ -20,7 +20,8 @@ sidebar:
     compile: Compile
     first_script: First Script
     core_concept: Core Concept
-    lang_instance: UNLang Instance
+    workflow: Workflow
+    lang_instance: UNLang Runtime
     node_loader: UNLang Loader
     lang_action: Action
     lang_state: State

@@ -20,7 +20,8 @@ sidebar:
     compile: 编译
     first_script: 第一段脚本
     core_concept: 核心概念
-    lang_instance: UNLang实例
+    workflow: 工作流
+    lang_instance: UNLang运行时
     node_loader: UNLang装载器
     lang_action: 行为
     lang_state: 状态
