@@ -1,9 +1,9 @@
 docs:
   getting_started:
     overview: index.html
-    install: index.html
-    compile: index.html
-    first_script: index.html
+    install: install.html
+    compile: compile.html
+    first_script: first_script.html
 
 api:
   core:
