@@ -2,7 +2,7 @@
 title: UNLang Runtime
 ---
 
-**UNLang Instance** (`LangInstance`) is the visual machine to run UNLang script. It's the first object user should use to setup UNLang runtime.
+**UNLang Instance** (`LangInstance`) is the container to run UNLang script. It's the first object user should use to setup UNLang runtime.
 
 ## Setup Runtime
 
