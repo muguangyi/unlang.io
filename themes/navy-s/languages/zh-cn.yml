@@ -24,5 +24,4 @@ sidebar:
     lang_node: UNLang节点
     lang_instance: UNLang运行时
     node_loader: UNLang装载器
-    lang_action: 行为
-    lang_state: 状态
+    lang_state: UNLang状态

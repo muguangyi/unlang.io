@@ -24,5 +24,4 @@ sidebar:
     lang_node: UNLang Node
     lang_instance: UNLang Runtime
     node_loader: UNLang Loader
-    lang_action: UNLang Action
     lang_state: UNLang State

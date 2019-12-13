@@ -9,5 +9,4 @@ docs:
     lang_node: lang_node.html
     lang_instance: lang_instance.html
     node_loader: node_loader.html
-    lang_action: lang_action.html
     lang_state: lang_state.html
