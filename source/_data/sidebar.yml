@@ -6,7 +6,7 @@ docs:
     first_script: first_script.html
   core_concept:
     workflow: workflow.html
-    lang_node: lang_node.html
     lang_instance: lang_instance.html
     node_loader: node_loader.html
+    lang_node: lang_node.html
     lang_state: lang_state.html
