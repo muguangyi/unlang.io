@@ -21,7 +21,7 @@ sidebar:
     first_script: 第一段脚本
     core_concept: 核心概念
     workflow: 工作流
-    lang_node: UNLang节点
-    lang_instance: UNLang运行时
-    node_loader: UNLang装载器
-    lang_state: UNLang状态
+    lang_node: UNLang 节点
+    lang_instance: UNLang 运行时
+    node_loader: UNLang 装载器
+    lang_state: UNLang 状态

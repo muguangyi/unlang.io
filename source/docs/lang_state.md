@@ -25,7 +25,7 @@ There are two ways to use UNLang state.
 
 > Let's use `state` to print `Hello UNLang!` per frame.
 
-### User State to trigger other module
+### Use State to trigger other module
 
 Use UNLang `State` directly and drive other logic.
 
@@ -57,6 +57,6 @@ Override `OnExecute` protected method to print the constant string.
 
 ### Difference
 
-The big difference between the two options is Whether the logic could be controlled in UNLang. If user wants to control the logic in UNLang, exporting the logic module and use fundamental modules to compose; Or implement the full feature internally and trigger it by UNLang.
+The big difference between the two options is whether the logic could be controlled in UNLang. If user wants to control the logic in UNLang, exporting the logic module and use fundamental modules to compose; Or implement the full feature internally and trigger it by UNLang.
 
 Which way to use is mainly based on the complexity and reuse of the logic, and fully decided by user.
