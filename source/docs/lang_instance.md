@@ -1,5 +1,5 @@
 ---
-title: UNLang Runtime
+title: Runtime
 ---
 
 **UNLang Instance** (`LangInstance`) is the container to run UNLang script. It's the first object user should use to setup UNLang runtime.

@@ -1,5 +1,5 @@
 ---
-title: UNLang State
+title: State
 ---
 
 **UNLang State** is a `state` type of state machine, since state machine is a common way to handle a game logic. Using `state`, user could implement loop logic during a certain time only if the `state` is not exit.

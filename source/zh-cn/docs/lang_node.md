@@ -1,5 +1,5 @@
 ---
-title: UNLang 节点
+title: Node
 ---
 
 UNLang节点（`LangNode`）是基础对象。UNLang所有可视化节点都需要继承自UNLang节点。

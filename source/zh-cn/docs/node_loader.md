@@ -1,5 +1,5 @@
 ---
-title: UNLang 装载器
+title: Loader
 ---
 
 **UNLang**需要知道如何装载脚本文件。UNLang默认的加载器是在Unity编辑器下使用**System.IO.File**在项目的目录下加载文件。但是在运行时，Unity有几种存放资源文件的地方，例如`Resources`，`StreamingAssets`和`PersistentDataPath`。UNLang并不知道如何加载，因此需要使用者接管加载操作。

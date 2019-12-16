@@ -1,5 +1,5 @@
 ---
-title: UNLang 运行时
+title: 运行时
 ---
 
 **UNLang 实例**（`LangInstance`）是运行UNLang脚本的容器。是使用者建立UNLang运行时的第一个对象。

@@ -1,5 +1,5 @@
 ---
-title: UNLang Loader
+title: Loader
 ---
 
 **UNLang** need to know where to load the script files. The default loader of UNLang is loading file in project folder with **System.IO.File** for Unity editor. But during the runtime, Unity has several asset files' locations, like `Resources`, `StreamingAssets` and `PersistentDataPath`. UNLang doesn't know how to load, so it exports a way to user to take over the loader operation.

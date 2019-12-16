@@ -1,3 +1,3 @@
 ---
-title: UNLang Graph
+title: Graph
 ---

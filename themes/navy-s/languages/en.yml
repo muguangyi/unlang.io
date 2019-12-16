@@ -21,8 +21,8 @@ sidebar:
     first_script: First Script
     core_concept: Core Concept
     workflow: Workflow
-    lang_node: UNLang Node
-    lang_instance: UNLang Runtime
-    node_loader: UNLang Loader
-    lang_state: UNLang State
-    lang_graph: UNLang Graph
+    lang_node: Node
+    lang_instance: Runtime
+    node_loader: Loader
+    lang_state: State
+    lang_graph: Graph
