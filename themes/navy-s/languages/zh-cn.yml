@@ -25,3 +25,4 @@ sidebar:
     lang_instance: UNLang 运行时
     node_loader: UNLang 装载器
     lang_state: UNLang 状态
+    lang_graph: UNLang 图

@@ -25,3 +25,4 @@ sidebar:
     lang_instance: UNLang Runtime
     node_loader: UNLang Loader
     lang_state: UNLang State
+    lang_graph: UNLang Graph

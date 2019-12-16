@@ -10,3 +10,4 @@ docs:
     node_loader: node_loader.html
     lang_node: lang_node.html
     lang_state: lang_state.html
+    lang_graph: lang_graph.html
