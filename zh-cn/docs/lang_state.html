@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>State | UNLang</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_state.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://muguangyi.github.io/unlang.io/docs/lang_state.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_state.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/unlang.io/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/unlang.io/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/unlang.io/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/unlang.io/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/unlang.io/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/unlang.io/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/unlang.io/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/unlang.io/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/unlang.io/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/unlang.io/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Open Graph -->
+  <meta name="description" content="UNLang 状态是状态机的状态类型，因为状态机是一种处理游戏逻辑的通用方式。使用状态, 只要这个状态没有结束，使用者就可以实现循环逻辑。 当然，使用者可以通过重写LangNode来实现基础的状态，只是UNLang已经提供了一个内建的状态供使用者重定义。 状态UNLang状态提供了一些默认的LangSpot。    管脚 描述     Begin 状态入口。   Abort 强制状态退出。   O">
+<meta property="og:type" content="website">
+<meta property="og:title" content="State">
+<meta property="og:url" content="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_state.html">
+<meta property="og:site_name" content="UNLang">
+<meta property="og:description" content="UNLang 状态是状态机的状态类型，因为状态机是一种处理游戏逻辑的通用方式。使用状态, 只要这个状态没有结束，使用者就可以实现循环逻辑。 当然，使用者可以通过重写LangNode来实现基础的状态，只是UNLang已经提供了一个内建的状态供使用者重定义。 状态UNLang状态提供了一些默认的LangSpot。    管脚 描述     Begin 状态入口。   Abort 强制状态退出。   O">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-state.png">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-mystate.png">
+<meta property="og:updated_time" content="2019-12-17T06:57:36.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="State">
+<meta name="twitter:description" content="UNLang 状态是状态机的状态类型，因为状态机是一种处理游戏逻辑的通用方式。使用状态, 只要这个状态没有结束，使用者就可以实现循环逻辑。 当然，使用者可以通过重写LangNode来实现基础的状态，只是UNLang已经提供了一个内建的状态供使用者重定义。 状态UNLang状态提供了一些默认的LangSpot。    管脚 描述     Begin 状态入口。   Abort 强制状态退出。   O">
+<meta name="twitter:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-state.png">
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/unlang.io/" id="logo">UNLang</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/unlang.io/zh-cn/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/muguangyi/unlang" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/lang_state.html" data-root="/unlang.io/">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">State</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/zh-cn/docs/lang_state.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p><strong>UNLang 状态</strong>是状态机的<code>状态</code>类型，因为状态机是一种处理游戏逻辑的通用方式。使用<code>状态</code>, 只要这个<code>状态</code>没有结束，使用者就可以实现循环逻辑。</p>
+<p>当然，使用者可以通过重写<code>LangNode</code>来实现基础的<code>状态</code>，只是UNLang已经提供了一个内建的<code>状态</code>供使用者重定义。</p>
+<h2 id="状态" class="article-heading"><a href="#状态" class="headerlink" title="状态"></a>状态<a class="article-anchor" href="#状态" aria-hidden="true"></a></h2><p>UNLang<code>状态</code>提供了一些默认的<code>LangSpot</code>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">管脚</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>Begin</code></td>
+<td style="text-align:left"><code>状态</code>入口。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>Abort</code></td>
+<td style="text-align:left">强制<code>状态</code>退出。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>OnEnter</code></td>
+<td style="text-align:left"><code>状态</code>初始化触发器。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>OnUpdate</code></td>
+<td style="text-align:left"><code>状态</code>帧循环触发器。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>OnExit</code></td>
+<td style="text-align:left"><code>状态</code>终止触发器。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>Substate</code></td>
+<td style="text-align:left"><code>状态</code>的子状态.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="如何使用状态" class="article-heading"><a href="#如何使用状态" class="headerlink" title="如何使用状态"></a>如何使用状态<a class="article-anchor" href="#如何使用状态" aria-hidden="true"></a></h2><p>有两种方式使用UNLang状态。</p>
+<blockquote>
+<p>让我们用<code>状态</code>实现每一帧打印一次<code>Hello UNLang!</code>。</p>
+</blockquote>
+<h3 id="使用状态触发其他模块" class="article-heading"><a href="#使用状态触发其他模块" class="headerlink" title="使用状态触发其他模块"></a>使用状态触发其他模块<a class="article-anchor" href="#使用状态触发其他模块" aria-hidden="true"></a></h3><p>直接使用UNLang<code>状态</code>来驱动其他逻辑。</p>
+<p><img src="../../assets/unlang-state.png" alt="unlang-state"></p>
+<p>使用<code>OnUpdate</code>输出管脚来触发UNLang节点章节创建的<code>MyModule</code>模块，因为<code>OnUpdate</code>会被每一帧触发一次。</p>
+<h3 id="扩展状态" class="article-heading"><a href="#扩展状态" class="headerlink" title="扩展状态"></a>扩展状态<a class="article-anchor" href="#扩展状态" aria-hidden="true"></a></h3><p>实现<code>MyStateModule</code>来做同样的事情。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> UNLang;</span><br><span class="line"><span class="keyword">using</span> UNode;</span><br><span class="line"></span><br><span class="line">[<span class="meta">NodeInterface(<span class="meta-string">"MyStateModule"</span>, <span class="meta-string">"Script/"</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">MyStateModule</span> : <span class="title">State</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnExecute</span>(<span class="params">LangInstance instance</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        UnityEngine.Debug.Log(<span class="string">"Hello UNLang!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重写<code>OnExecute</code>保护方法打印常量字符串。</p>
+<p><img src="../../assets/unlang-mystate.png" alt="unlang-mystate"></p>
+<h3 id="区别" class="article-heading"><a href="#区别" class="headerlink" title="区别"></a>区别<a class="article-anchor" href="#区别" aria-hidden="true"></a></h3><p>这两种方式的最大区别是是否这段逻辑能在UNLang中控制。如果使用者希望在UNLang中控制，那么将逻辑以模块方式输出，再通过内建的基础模块进行组合；或者在模块内实现所有逻辑，而只是用UNLang来触发。</p>
+<p>如何使用主要取决于逻辑的复杂度和可重用性，这全都由使用者决定。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-12-17T06:57:36.318Z" itemprop="dateModified">上次更新：2019-12-17</time>
+                <a href="lang_node.html" class="article-footer-prev" title="Node"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="lang_graph.html" class="article-footer-next" title="Graph"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#状态"><span class="toc-text">状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何使用状态"><span class="toc-text">如何使用状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用状态触发其他模块"><span class="toc-text">使用状态触发其他模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展状态"><span class="toc-text">扩展状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区别"><span class="toc-text">区别</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><a href="install.html" class="sidebar-link">安装</a><a href="compile.html" class="sidebar-link">编译</a><a href="first_script.html" class="sidebar-link">第一段脚本</a><strong class="sidebar-title">核心概念</strong><a href="workflow.html" class="sidebar-link">工作流</a><a href="lang_instance.html" class="sidebar-link">运行时</a><a href="node_loader.html" class="sidebar-link">Loader</a><a href="lang_node.html" class="sidebar-link">Node</a><a href="lang_state.html" class="sidebar-link current">State</a><a href="lang_graph.html" class="sidebar-link">Graph</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/muguangyi/unlang/graphs/contributors" target="_blank">MuGuangyi</a><br>
+      Documentation licensed under MIT.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/muguangyi/unlang" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/unlang.io/zh-cn/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/muguangyi/unlang" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="install.html" class="mobile-nav-link">安装</a><a href="compile.html" class="mobile-nav-link">编译</a><a href="first_script.html" class="mobile-nav-link">第一段脚本</a><strong class="mobile-nav-title">核心概念</strong><a href="workflow.html" class="mobile-nav-link">工作流</a><a href="lang_instance.html" class="mobile-nav-link">运行时</a><a href="node_loader.html" class="mobile-nav-link">Loader</a><a href="lang_node.html" class="mobile-nav-link">Node</a><a href="lang_state.html" class="mobile-nav-link current">State</a><a href="lang_graph.html" class="mobile-nav-link">Graph</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lang_state.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+<script src="/unlang.io/js/lang_select.js"></script>
+<script src="/unlang.io/js/toc.js"></script>
+<script src="/unlang.io/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

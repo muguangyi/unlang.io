@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Graph | UNLang</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_graph.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://muguangyi.github.io/unlang.io/docs/lang_graph.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_graph.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/unlang.io/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/unlang.io/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/unlang.io/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/unlang.io/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/unlang.io/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/unlang.io/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/unlang.io/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/unlang.io/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/unlang.io/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/unlang.io/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Open Graph -->
+  <meta name="description" content="UNLang Graph可以将UNLang脚本打包成一个独立的模块，并被其他脚本重用。是UNLang抽象脚本并提供的一种更高层的重用机制。 使用者需要做的关键步骤是需要在UNLang脚本中连接In和Out模组来定义Graph的输入参数和输出结果。 输入值一个Graph应该定义输入值，这样UNLang就可以理解Graph的入口，并知道如何连接其他模组。就类似于函数的输入参数。  使用UNLang/G">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Graph">
+<meta property="og:url" content="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_graph.html">
+<meta property="og:site_name" content="UNLang">
+<meta property="og:description" content="UNLang Graph可以将UNLang脚本打包成一个独立的模块，并被其他脚本重用。是UNLang抽象脚本并提供的一种更高层的重用机制。 使用者需要做的关键步骤是需要在UNLang脚本中连接In和Out模组来定义Graph的输入参数和输出结果。 输入值一个Graph应该定义输入值，这样UNLang就可以理解Graph的入口，并知道如何连接其他模组。就类似于函数的输入参数。  使用UNLang/G">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-add.png">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-graph.png">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-usegraph.png">
+<meta property="og:updated_time" content="2019-12-17T06:57:36.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Graph">
+<meta name="twitter:description" content="UNLang Graph可以将UNLang脚本打包成一个独立的模块，并被其他脚本重用。是UNLang抽象脚本并提供的一种更高层的重用机制。 使用者需要做的关键步骤是需要在UNLang脚本中连接In和Out模组来定义Graph的输入参数和输出结果。 输入值一个Graph应该定义输入值，这样UNLang就可以理解Graph的入口，并知道如何连接其他模组。就类似于函数的输入参数。  使用UNLang/G">
+<meta name="twitter:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-add.png">
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/unlang.io/" id="logo">UNLang</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/unlang.io/zh-cn/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/muguangyi/unlang" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/lang_graph.html" data-root="/unlang.io/">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Graph</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/zh-cn/docs/lang_graph.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p><strong>UNLang Graph</strong>可以将UNLang脚本打包成一个独立的模块，并被其他脚本重用。是UNLang抽象脚本并提供的一种更高层的重用机制。</p>
+<p>使用者需要做的关键步骤是需要在UNLang脚本中连接<code>In</code>和<code>Out</code>模组来定义<code>Graph</code>的输入参数和输出结果。</p>
+<h2 id="输入值" class="article-heading"><a href="#输入值" class="headerlink" title="输入值"></a>输入值<a class="article-anchor" href="#输入值" aria-hidden="true"></a></h2><p>一个<code>Graph</code>应该定义输入值，这样UNLang就可以理解<code>Graph</code>的入口，并知道如何连接其他模组。就类似于函数的输入参数。</p>
+<blockquote>
+<p>使用<code>UNLang/Graph/In</code>模块。</p>
+</blockquote>
+<h2 id="返回值" class="article-heading"><a href="#返回值" class="headerlink" title="返回值"></a>返回值<a class="article-anchor" href="#返回值" aria-hidden="true"></a></h2><p>一个<code>Graph</code>如果存在返回值也可以定义输出结果。</p>
+<blockquote>
+<p>使用<code>UNLang/Graph/Out</code>模块。</p>
+</blockquote>
+<h2 id="例子" class="article-heading"><a href="#例子" class="headerlink" title="例子"></a>例子<a class="article-anchor" href="#例子" aria-hidden="true"></a></h2><p>我们来制作一个计算器的整数加法（a + b = c）功能。</p>
+<h3 id="创建add-Graph" class="article-heading"><a href="#创建add-Graph" class="headerlink" title="创建add Graph"></a>创建<code>add</code> Graph<a class="article-anchor" href="#创建add-Graph" aria-hidden="true"></a></h3><h4 id="①-创建”-”模块" class="article-heading"><a href="#①-创建”-”模块" class="headerlink" title="① 创建”+”模块"></a>① 创建”+”模块<a class="article-anchor" href="#①-创建”-”模块" aria-hidden="true"></a></h4><ul>
+<li>如下图，使用<code>UNLang/Operator/+</code>模块。<br><img src="../../assets/unlang-add.png" alt="unlang-add"></li>
+<li>在<code>Inspector</code>窗口中设置<code>+</code>模块值类型为<code>Integer</code>。</li>
+</ul>
+<h4 id="②-连接”In”和”Out”模块" class="article-heading"><a href="#②-连接”In”和”Out”模块" class="headerlink" title="② 连接”In”和”Out”模块"></a>② 连接”In”和”Out”模块<a class="article-anchor" href="#②-连接”In”和”Out”模块" aria-hidden="true"></a></h4><ul>
+<li>添加<code>UNLang/Graph/In</code>和<code>UNLang/Graph/Out</code>模组。</li>
+<li>在<code>Inspector</code>窗口中设置<code>In</code>和<code>Out</code>模块的值类型是<code>Integer</code>。</li>
+<li>如下图连接。<br><img src="../../assets/unlang-graph.png" alt="unlang-graph"></li>
+</ul>
+<h4 id="③-存储到add-bytes文件" class="article-heading"><a href="#③-存储到add-bytes文件" class="headerlink" title="③ 存储到add.bytes文件"></a>③ 存储到<code>add.bytes</code>文件<a class="article-anchor" href="#③-存储到add-bytes文件" aria-hidden="true"></a></h4><h3 id="使用add-Graph" class="article-heading"><a href="#使用add-Graph" class="headerlink" title="使用add Graph"></a>使用<code>add</code> Graph<a class="article-anchor" href="#使用add-Graph" aria-hidden="true"></a></h3><ul>
+<li>通过<code>Graph...</code>菜单并选择<code>add.bytes</code>文件来导入<code>add</code> Graph。</li>
+<li>如下图设置脚本：两个常量值，和打印到console窗口。</li>
+<li>使用<code>Entry</code>模块作为脚本入口。<br><img src="../../assets/unlang-usegraph.png" alt="unlang-usegraph"></li>
+</ul>
+<h2 id="总结" class="article-heading"><a href="#总结" class="headerlink" title="总结"></a>总结<a class="article-anchor" href="#总结" aria-hidden="true"></a></h2><p><code>Graph</code>将隐藏所有细节的模组，而只显示脚本的<code>In</code>和<code>Out</code>管脚。因此<code>Graph</code>是UNLang抽象复杂脚本并使其可以被其他脚本重用的一种较好的方式。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-12-17T06:57:36.318Z" itemprop="dateModified">上次更新：2019-12-17</time>
+                <a href="lang_state.html" class="article-footer-prev" title="State"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#输入值"><span class="toc-text">输入值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#返回值"><span class="toc-text">返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子"><span class="toc-text">例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建add-Graph"><span class="toc-text">创建add Graph</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#①-创建”-”模块"><span class="toc-text">① 创建”+”模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#②-连接”In”和”Out”模块"><span class="toc-text">② 连接”In”和”Out”模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#③-存储到add-bytes文件"><span class="toc-text">③ 存储到add.bytes文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用add-Graph"><span class="toc-text">使用add Graph</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><a href="install.html" class="sidebar-link">安装</a><a href="compile.html" class="sidebar-link">编译</a><a href="first_script.html" class="sidebar-link">第一段脚本</a><strong class="sidebar-title">核心概念</strong><a href="workflow.html" class="sidebar-link">工作流</a><a href="lang_instance.html" class="sidebar-link">运行时</a><a href="node_loader.html" class="sidebar-link">Loader</a><a href="lang_node.html" class="sidebar-link">Node</a><a href="lang_state.html" class="sidebar-link">State</a><a href="lang_graph.html" class="sidebar-link current">Graph</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/muguangyi/unlang/graphs/contributors" target="_blank">MuGuangyi</a><br>
+      Documentation licensed under MIT.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/muguangyi/unlang" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/unlang.io/zh-cn/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/muguangyi/unlang" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="install.html" class="mobile-nav-link">安装</a><a href="compile.html" class="mobile-nav-link">编译</a><a href="first_script.html" class="mobile-nav-link">第一段脚本</a><strong class="mobile-nav-title">核心概念</strong><a href="workflow.html" class="mobile-nav-link">工作流</a><a href="lang_instance.html" class="mobile-nav-link">运行时</a><a href="node_loader.html" class="mobile-nav-link">Loader</a><a href="lang_node.html" class="mobile-nav-link">Node</a><a href="lang_state.html" class="mobile-nav-link">State</a><a href="lang_graph.html" class="mobile-nav-link current">Graph</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lang_graph.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+<script src="/unlang.io/js/lang_select.js"></script>
+<script src="/unlang.io/js/toc.js"></script>
+<script src="/unlang.io/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Node | UNLang</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_node.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://muguangyi.github.io/unlang.io/docs/lang_node.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_node.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/unlang.io/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/unlang.io/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/unlang.io/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/unlang.io/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/unlang.io/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/unlang.io/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/unlang.io/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/unlang.io/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/unlang.io/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/unlang.io/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Open Graph -->
+  <meta name="description" content="UNLang节点（LangNode）是基础对象。UNLang所有可视化节点都需要继承自UNLang节点。 什么是LangNodeLangNode就像一个带有输入/输出的电子元件。信号触发输入管脚，然后整个LangNode开始运行。在LangNode运行中或者结束时，可以触发输出管脚信号。  LangSpotLangSpot是节点的管脚。 一个自定义模块应该定义有多少个输入或者输出 管脚. 这样UN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Node">
+<meta property="og:url" content="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_node.html">
+<meta property="og:site_name" content="UNLang">
+<meta property="og:description" content="UNLang节点（LangNode）是基础对象。UNLang所有可视化节点都需要继承自UNLang节点。 什么是LangNodeLangNode就像一个带有输入/输出的电子元件。信号触发输入管脚，然后整个LangNode开始运行。在LangNode运行中或者结束时，可以触发输出管脚信号。  LangSpotLangSpot是节点的管脚。 一个自定义模块应该定义有多少个输入或者输出 管脚. 这样UN">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-node.png">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-mymodule.png">
+<meta property="og:updated_time" content="2019-12-17T06:57:36.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node">
+<meta name="twitter:description" content="UNLang节点（LangNode）是基础对象。UNLang所有可视化节点都需要继承自UNLang节点。 什么是LangNodeLangNode就像一个带有输入/输出的电子元件。信号触发输入管脚，然后整个LangNode开始运行。在LangNode运行中或者结束时，可以触发输出管脚信号。  LangSpotLangSpot是节点的管脚。 一个自定义模块应该定义有多少个输入或者输出 管脚. 这样UN">
+<meta name="twitter:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-node.png">
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/unlang.io/" id="logo">UNLang</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/unlang.io/zh-cn/docs/" class="main-nav-link">文档</a>
+      <a href="https://github.com/muguangyi/unlang" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/lang_node.html" data-root="/unlang.io/">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Node</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/zh-cn/docs/lang_node.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>UNLang节点（<code>LangNode</code>）是基础对象。UNLang所有可视化节点都需要继承自UNLang节点。</p>
+<h2 id="什么是LangNode" class="article-heading"><a href="#什么是LangNode" class="headerlink" title="什么是LangNode"></a>什么是<code>LangNode</code><a class="article-anchor" href="#什么是LangNode" aria-hidden="true"></a></h2><p><code>LangNode</code>就像一个带有<code>输入</code>/<code>输出</code>的电子元件。信号触发<code>输入</code>管脚，然后整个<code>LangNode</code>开始运行。在<code>LangNode</code>运行中或者结束时，可以触发<code>输出</code>管脚信号。</p>
+<p><img src="../../assets/unlang-node.png" alt="unlang-node"></p>
+<h2 id="LangSpot" class="article-heading"><a href="#LangSpot" class="headerlink" title="LangSpot"></a>LangSpot<a class="article-anchor" href="#LangSpot" aria-hidden="true"></a></h2><p><code>LangSpot</code>是节点的<code>管脚</code>。 一个自定义模块应该定义有多少个<code>输入</code>或者<code>输出</code> 管脚. 这样UNLang就可以在编辑器中可视化显示这个模块，并标准化模块的操作。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">LangSpot</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LangSpot</span>(<span class="params"><span class="keyword">string</span> name, LangType.Category category, Node owner, <span class="keyword">int</span> capacity, SpotType type</span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>name</code></td>
+<td style="text-align:left"><code>LangSpot</code>名字。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>category</code></td>
+<td style="text-align:left">连接类型。详细请查看<code>LangType.Category</code>。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>owner</code></td>
+<td style="text-align:left"><code>LangSpot</code>所有者，一般都是<code>this</code>。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>capacity</code></td>
+<td style="text-align:left">这个<code>LangSpot</code>同时能连接的最多数量连线。</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>type</code></td>
+<td style="text-align:left"><code>LangSpot</code>类型。它可以是<code>In</code>（<strong>输入</strong>）或者<code>Out</code>（<strong>输出</strong>）。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="NodeInterface" class="article-heading"><a href="#NodeInterface" class="headerlink" title="NodeInterface"></a>NodeInterface<a class="article-anchor" href="#NodeInterface" aria-hidden="true"></a></h2><p>使用<code>NodeInterface</code>属性，使用者可以定义模块在UNLang编辑器中的可视化结果。</p>
+<blockquote>
+<p><strong>注意</strong>: <code>NodeInterface</code>是一个模块的必选项。</p>
+</blockquote>
+<h2 id="实现你的模块" class="article-heading"><a href="#实现你的模块" class="headerlink" title="实现你的模块"></a>实现你的模块<a class="article-anchor" href="#实现你的模块" aria-hidden="true"></a></h2><p><code>LangNode</code>和<code>LangSpot</code>标准化了一个模块的基本组件和操作。</p>
+<p>让我们用UnityEngine.Debug在UNLang中实现一个基础模块，用来显示一个字符串<code>Hello UNLang!</code>。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">[<span class="meta">NodeInterface(<span class="meta-string">"MyModule"</span>, <span class="meta-string">"Script/"</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">MyModule</span> : <span class="title">LangNode</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Add(<span class="keyword">new</span> LangSpot(<span class="string">"Show"</span>, LangType.Category.Any, <span class="keyword">this</span>, <span class="number">-1</span>, SpotType.In));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnSignal</span>(<span class="params">Spot spot, <span class="keyword">params</span> <span class="keyword">object</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">if</span> (SpotType.In == spot.Type)</span><br><span class="line">        &#123;</span><br><span class="line">            UnityEngine.Debug.Log(<span class="string">"Hello UNLang!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用者需要做：</p>
+<ul>
+<li>首先，重写<code>Init</code>方法来定义这个模块的<code>LangSpot</code>。<blockquote>
+<p>例子代码定义了一个<code>LangSpot</code>。<code>Show</code>是这个<code>LangSpot</code>的名字；<code>Any</code> 意味着这个LangSpot可以连接上游输入的任何类型数据信号；<code>this</code>是这个<code>LangSpot</code>的宿主；<code>-1</code>意味着它可以同时连接任意数量的连线；<code>In</code>意味着它是一个输入类型的管脚。</p>
+</blockquote>
+</li>
+<li>第二步，在<code>OnSignal</code>方法中处理逻辑。<blockquote>
+<p>例子代码检查了管脚类型是否是<code>In</code>，然后在console窗口中输出<code>Hello UNLang!</code>。</p>
+</blockquote>
+</li>
+<li>最后，使用<code>NodeInterface</code>属性定义模块在UNLang编辑器的名称和分组。<blockquote>
+<p>例子代码定义模块名称为<code>MyModule</code>，并且在<code>Script</code>分组菜单下。</p>
+</blockquote>
+</li>
+</ul>
+<p>下图就是<code>MyModule</code>在UNLang编辑器中的效果：</p>
+<p><img src="../../assets/unlang-mymodule.png" alt="unlang-mymodule"></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-12-17T06:57:36.318Z" itemprop="dateModified">上次更新：2019-12-17</time>
+                <a href="node_loader.html" class="article-footer-prev" title="Loader"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="lang_state.html" class="article-footer-next" title="State"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是LangNode"><span class="toc-text">什么是LangNode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LangSpot"><span class="toc-text">LangSpot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NodeInterface"><span class="toc-text">NodeInterface</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现你的模块"><span class="toc-text">实现你的模块</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><a href="install.html" class="sidebar-link">安装</a><a href="compile.html" class="sidebar-link">编译</a><a href="first_script.html" class="sidebar-link">第一段脚本</a><strong class="sidebar-title">核心概念</strong><a href="workflow.html" class="sidebar-link">工作流</a><a href="lang_instance.html" class="sidebar-link">运行时</a><a href="node_loader.html" class="sidebar-link">Loader</a><a href="lang_node.html" class="sidebar-link current">Node</a><a href="lang_state.html" class="sidebar-link">State</a><a href="lang_graph.html" class="sidebar-link">Graph</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/muguangyi/unlang/graphs/contributors" target="_blank">MuGuangyi</a><br>
+      Documentation licensed under MIT.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/muguangyi/unlang" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/unlang.io/zh-cn/docs/" class="mobile-nav-link">文档</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/muguangyi/unlang" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="install.html" class="mobile-nav-link">安装</a><a href="compile.html" class="mobile-nav-link">编译</a><a href="first_script.html" class="mobile-nav-link">第一段脚本</a><strong class="mobile-nav-title">核心概念</strong><a href="workflow.html" class="mobile-nav-link">工作流</a><a href="lang_instance.html" class="mobile-nav-link">运行时</a><a href="node_loader.html" class="mobile-nav-link">Loader</a><a href="lang_node.html" class="mobile-nav-link current">Node</a><a href="lang_state.html" class="mobile-nav-link">State</a><a href="lang_graph.html" class="mobile-nav-link">Graph</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lang_node.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+<script src="/unlang.io/js/lang_select.js"></script>
+<script src="/unlang.io/js/toc.js"></script>
+<script src="/unlang.io/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

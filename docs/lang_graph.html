@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Graph | UNLang</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muguangyi.github.io/unlang.io/docs/lang_graph.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://muguangyi.github.io/unlang.io/docs/lang_graph.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://muguangyi.github.io/unlang.io/zh-cn/docs/lang_graph.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/unlang.io/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/unlang.io/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/unlang.io/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/unlang.io/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/unlang.io/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/unlang.io/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/unlang.io/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/unlang.io/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/unlang.io/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/unlang.io/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/unlang.io/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Open Graph -->
+  <meta name="description" content="UNLang Graph could package a UNLang script to an isolated module and be reused by other scripts. It’s a high level reuse for UNLang to abstract UNLang script. The key step user must do is connecting I">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Graph">
+<meta property="og:url" content="https://muguangyi.github.io/unlang.io/docs/lang_graph.html">
+<meta property="og:site_name" content="UNLang">
+<meta property="og:description" content="UNLang Graph could package a UNLang script to an isolated module and be reused by other scripts. It’s a high level reuse for UNLang to abstract UNLang script. The key step user must do is connecting I">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-add.png">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-graph.png">
+<meta property="og:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-usegraph.png">
+<meta property="og:updated_time" content="2019-12-17T06:57:36.314Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Graph">
+<meta name="twitter:description" content="UNLang Graph could package a UNLang script to an isolated module and be reused by other scripts. It’s a high level reuse for UNLang to abstract UNLang script. The key step user must do is connecting I">
+<meta name="twitter:image" content="https://muguangyi.github.io/unlang.io/assets/unlang-add.png">
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/unlang.io/" id="logo">UNLang</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/unlang.io/docs/" class="main-nav-link">Docs</a>
+      <a href="https://github.com/muguangyi/unlang" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/lang_graph.html" data-root="/unlang.io/">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Graph</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/docs/lang_graph.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p><strong>UNLang Graph</strong> could package a UNLang script to an isolated module and be reused by other scripts. It’s a high level reuse for UNLang to abstract UNLang script.</p>
+<p>The key step user must do is connecting <code>In</code> and <code>Out</code> modules in UNLang script to define the input parameters and return values of the <code>Graph</code>.</p>
+<h2 id="Input-Value" class="article-heading"><a href="#Input-Value" class="headerlink" title="Input Value"></a>Input Value<a class="article-anchor" href="#Input-Value" aria-hidden="true"></a></h2><p>A <code>Graph</code> should define the input values, then UNLang could understand the <code>Graph</code> entrance and know how to connect with other module. Just like input parameters of function.</p>
+<blockquote>
+<p>Use <code>UNLang/Graph/In</code> module.</p>
+</blockquote>
+<h2 id="Return-Value" class="article-heading"><a href="#Return-Value" class="headerlink" title="Return Value"></a>Return Value<a class="article-anchor" href="#Return-Value" aria-hidden="true"></a></h2><p>A <code>Graph</code> also could define the output result if it has.</p>
+<blockquote>
+<p>Use <code>UNLang/Graph/Out</code> module.</p>
+</blockquote>
+<h2 id="Example" class="article-heading"><a href="#Example" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example" aria-hidden="true"></a></h2><p>Let’s make a UNLang script to implement integer addition (a + b = c) feature of calculator.</p>
+<h3 id="Create-add-Graph" class="article-heading"><a href="#Create-add-Graph" class="headerlink" title="Create add Graph"></a>Create <code>add</code> Graph<a class="article-anchor" href="#Create-add-Graph" aria-hidden="true"></a></h3><h4 id="①-Create-“-”-module" class="article-heading"><a href="#①-Create-“-”-module" class="headerlink" title="① Create “+” module"></a>① Create “+” module<a class="article-anchor" href="#①-Create-“-”-module" aria-hidden="true"></a></h4><ul>
+<li>Use <code>UNLang/Operator/+</code> module as follows.<br><img src="../assets/unlang-add.png" alt="unlang-add"></li>
+<li>Set <code>+</code> module value type to <code>Integer</code> in the <code>Inspector</code> window.</li>
+</ul>
+<h4 id="②-Connect-“In”-and-“Out”-module" class="article-heading"><a href="#②-Connect-“In”-and-“Out”-module" class="headerlink" title="② Connect “In” and “Out” module"></a>② Connect “In” and “Out” module<a class="article-anchor" href="#②-Connect-“In”-and-“Out”-module" aria-hidden="true"></a></h4><ul>
+<li>Add <code>UNLang/Graph/In</code> and <code>UNLang/Graph/Out</code> modules.</li>
+<li>Set <code>In</code> and <code>Out</code> module value type to <code>Integer</code> in the <code>Inspector</code> window.</li>
+<li>Connect as follows.<br><img src="../assets/unlang-graph.png" alt="unlang-graph"></li>
+</ul>
+<h4 id="③-Save-to-add-bytes" class="article-heading"><a href="#③-Save-to-add-bytes" class="headerlink" title="③ Save to add.bytes"></a>③ Save to <code>add.bytes</code><a class="article-anchor" href="#③-Save-to-add-bytes" aria-hidden="true"></a></h4><h3 id="Use-add-Graph" class="article-heading"><a href="#Use-add-Graph" class="headerlink" title="Use add Graph"></a>Use <code>add</code> Graph<a class="article-anchor" href="#Use-add-Graph" aria-hidden="true"></a></h3><ul>
+<li>Import <code>add</code> graph by clicking <code>Graph...</code> menu and choose <code>add.bytes</code> file.</li>
+<li>Setup the script as follows: Two constant values and print to console.</li>
+<li>Use <code>Entry</code> module as the beginning.<br><img src="../assets/unlang-usegraph.png" alt="unlang-usegraph"></li>
+</ul>
+<h2 id="Summary" class="article-heading"><a href="#Summary" class="headerlink" title="Summary"></a>Summary<a class="article-anchor" href="#Summary" aria-hidden="true"></a></h2><p>The <code>Graph</code> will hide all detail modules but only show <code>In</code> and <code>Out</code> pins of the script. So <code>Graph</code> is a good way to abstract a complex script and make it as a module to be reused by other script in UNLang.</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-12-17T06:57:36.314Z" itemprop="dateModified">Last updated: 2019-12-17</time>
+                <a href="lang_state.html" class="article-footer-prev" title="State"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Value"><span class="toc-text">Input Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Return-Value"><span class="toc-text">Return Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-add-Graph"><span class="toc-text">Create add Graph</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#①-Create-“-”-module"><span class="toc-text">① Create “+” module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#②-Connect-“In”-and-“Out”-module"><span class="toc-text">② Connect “In” and “Out” module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#③-Save-to-add-bytes"><span class="toc-text">③ Save to add.bytes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Use-add-Graph"><span class="toc-text">Use add Graph</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Overview</a><a href="install.html" class="sidebar-link">Install</a><a href="compile.html" class="sidebar-link">Compile</a><a href="first_script.html" class="sidebar-link">First Script</a><strong class="sidebar-title">Core Concept</strong><a href="workflow.html" class="sidebar-link">Workflow</a><a href="lang_instance.html" class="sidebar-link">Runtime</a><a href="node_loader.html" class="sidebar-link">Loader</a><a href="lang_node.html" class="sidebar-link">Node</a><a href="lang_state.html" class="sidebar-link">State</a><a href="lang_graph.html" class="sidebar-link current">Graph</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/muguangyi/unlang/graphs/contributors" target="_blank">MuGuangyi</a><br>
+      Documentation licensed under MIT.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/muguangyi/unlang" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/unlang.io/docs/" class="mobile-nav-link">Docs</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/muguangyi/unlang" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Overview</a><a href="install.html" class="mobile-nav-link">Install</a><a href="compile.html" class="mobile-nav-link">Compile</a><a href="first_script.html" class="mobile-nav-link">First Script</a><strong class="mobile-nav-title">Core Concept</strong><a href="workflow.html" class="mobile-nav-link">Workflow</a><a href="lang_instance.html" class="mobile-nav-link">Runtime</a><a href="node_loader.html" class="mobile-nav-link">Loader</a><a href="lang_node.html" class="mobile-nav-link">Node</a><a href="lang_state.html" class="mobile-nav-link">State</a><a href="lang_graph.html" class="mobile-nav-link current">Graph</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lang_graph.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+<script src="/unlang.io/js/lang_select.js"></script>
+<script src="/unlang.io/js/toc.js"></script>
+<script src="/unlang.io/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
